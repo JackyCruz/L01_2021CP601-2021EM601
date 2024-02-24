@@ -59,29 +59,15 @@ namespace L01_2021CP601_2021EM601.Controllers
         [HttpGet]
         [Route("Find/{filtro}")]
 
-        public IActionResult FindBycliente(int id)
+        public IActionResult FindByDescription(int id)
         {
             pedidos? pedidos = (from e in _pedidosContexto.pedidos
                                where e.clienteId == id
                                select e).FirstOrDefault();
 
-
-            if (pedidos == null)
-            {
-                return NotFound();
-            }
-            return Ok(pedidos);
-
-
-        }
-
-        public IActionResult FindBymotorista(int id)
-        {
-            pedidos? pedidos =
-            (from e in _pedidosContexto.pedidos
-             where e.motoristaId == id
-             select e).FirstOrDefault();
-
+                                (from e in _pedidosContexto.pedidos
+                                where e.motoristaId == id
+                                select e).FirstOrDefault();
 
             if (pedidos == null)
             {
