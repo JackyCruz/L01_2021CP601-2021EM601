@@ -57,7 +57,7 @@ namespace L01_2021CP601_2021EM601.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Find/{filtro}")]
+        [Route("Find/{id}")]
 
         public IActionResult FindByDescription(int id)
         {
