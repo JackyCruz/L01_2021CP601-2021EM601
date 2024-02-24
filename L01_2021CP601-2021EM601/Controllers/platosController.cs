@@ -43,7 +43,7 @@ namespace L01_2021CP601_2021EM601.Controllers
         public IActionResult Get(int id)
         {
             pedidos? pedidos = (from e in _platosContexto.pedidos
-                                where e.pedidoId == id
+                                where e.precio == id
                                 select e).FirstOrDefault();
             if (pedidos == null)
             {
